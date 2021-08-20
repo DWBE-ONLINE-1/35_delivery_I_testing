@@ -6,7 +6,7 @@ const UserController = require("./user.controller");
 const UserService = require("./user.service");
 const UserRepository = require("./user.repository");
 
-describe("UserControllerTest", function () {
+describe.it("UserControllerTest", function () {
   let expectedStubValue;
   let stubValue;
   let status;
