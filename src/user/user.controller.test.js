@@ -6,7 +6,7 @@ const UserController = require("./user.controller");
 const UserService = require("./user.service");
 const UserRepository = require("./user.repository");
 
-describe.it("UserControllerTest", function () {
+describe("UserControllerTest", function () {
   let expectedStubValue;
   let stubValue;
   let status;
@@ -57,7 +57,7 @@ describe.it("UserControllerTest", function () {
       expect(json.args[0][0].message).to.equal("Invalid Params");
     });
 
-    it.skip("should not register a user when name and email params are not provided", async function () {
+    it("should not register a user when name and email params are not provided", async function () {
       req = { body: {} };
 
       await userController.register(req, res);
