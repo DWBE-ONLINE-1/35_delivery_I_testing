@@ -102,7 +102,7 @@ describe("UserControllerTest", function () {
     });
   });
 
-  describe.it("getUser", function () {
+  describe("getUser", function () {
     beforeEach(() => {
       req = {
         params: {
