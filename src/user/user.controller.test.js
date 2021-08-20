@@ -57,7 +57,7 @@ describe("UserControllerTest", function () {
       expect(json.args[0][0].message).to.equal("Invalid Params");
     });
 
-    it("should not register a user when name and email params are not provided", async function () {
+    it.skip("should not register a user when name and email params are not provided", async function () {
       req = { body: {} };
 
       await userController.register(req, res);
@@ -68,7 +68,7 @@ describe("UserControllerTest", function () {
       expect(json.args[0][0].message).to.equal("Invalid Params");
     });
 
-    it("should not register a user when email param is not provided", async function () {
+    it.skip("should not register a user when email param is not provided", async function () {
       req = {
         body: {
           name: faker.name.findName()
@@ -83,7 +83,7 @@ describe("UserControllerTest", function () {
       expect(json.args[0][0].message).to.equal("Invalid Params");
     });
 
-    it("should register a user when email and name params are provided", async function () {
+    it.skip("should register a user when email and name params are provided", async function () {
       req = {
         body: {
           name: faker.name.findName(),
@@ -103,13 +103,6 @@ describe("UserControllerTest", function () {
   });
 
   describe.it("getUser", function () {
-    const mockResponse = () => {
-      const res = {};
-      res.status = sinon.stub()
-      res.json = sinon.stub()
-      res.status.returns(res);
-      return res;
-    };
     beforeEach(() => {
       req = {
         params: {
@@ -139,27 +132,5 @@ describe("UserControllerTest", function () {
       expect(stub.calledOnce).to.be.true;
       mock.verify();
     });
-
-    // it.only("should return a user that matches the id param", async function () {
-    //   stubValue = {
-    //     id: req.params.id,
-    //     name: faker.name.findName(),
-    //     email: faker.internet.email(),
-    //     createdAt: faker.date.past(),
-    //     updatedAt: faker.date.past()
-    //   };
-    //   let sandbox = sinon.createSandbox();
-    //   const mock = sinon.mock(res);
-    //   mock
-    //     .expects("json")
-    //     .once()
-    //     .withExactArgs({ data: stubValue });
-    //   const stub = sinon.stub(userService, "getUser").returns(stubValue);
-
-    //   await userController.getUser(req, res);
-
-    //   expect(stub.calledOnce).to.be.true;
-    //   mock.verify();
-    // });
   });
 });

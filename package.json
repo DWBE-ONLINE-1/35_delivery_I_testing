@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha './src/**/*.test.js'",
+    "test-coverage": "nyc --reporter=html mocha './src/**/*.test.js'",
     "start": "node src/app.js"
   },
   "keywords": [
@@ -28,6 +29,7 @@
     "chai": "^4.2.0",
     "faker": "^5.5.3",
     "mocha": "^9.0.3",
-    "sinon": "^7.5.0"
+    "sinon": "^7.5.0",
+    "nyc": "^15.1.0"
   }
 }
