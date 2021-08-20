@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha './src/**/*.test.js'",
-    "test-coverage": "nyc --reporter=html mocha './src/**/*.test.js'",
+    "test-coverage": "nyc mocha './src/**/*.test.js'",
+    "test-coverage-html": "nyc --reporter=html mocha './src/**/*.test.js'",
     "start": "node src/app.js"
   },
   "keywords": [
