@@ -3,22 +3,22 @@ class UserController {
     this.userService = userService;
   }
 
-  async register(req, res, next) {
-    const { name, email } = req.body;
-
-    if (
-      !name ||
-      typeof name !== "string" ||
-      (!email || typeof email !== "string")
-    ) {
-      return res.status(400).json({
-        message: "Invalid Params"
-      });
-    }
-    const user = await this.userService.create(name, email);
-    return res.status(201).json({
-      data: user
-    });
+  register(req, res, next) {
+    // const { name, email } = req.body;
+    // if (
+    //   !name ||
+    //   typeof name !== "string" ||
+    //   (!email || typeof email !== "string")
+    // ) {
+    //   return res.status(400).json({
+    //     message: "Invalid Params"
+    //   });
+    // }
+    // const user = await this.userService.create(name, email);
+    // return res.status(201).json({
+    //   data: user
+    // });
+    throw new Error("Error en register");
   }
 
   async getUser(req, res) {

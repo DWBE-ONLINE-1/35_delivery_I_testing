@@ -12,6 +12,7 @@ app.use(morgan("dev"));
 const PORT = process.env.PORT || 5001;
 
 app.use("/api/v1", router);
+
 app.get("*", (req, res) => {
   res.status(404).json({ message: "Welcome to the begining of nothingness" });
 });
